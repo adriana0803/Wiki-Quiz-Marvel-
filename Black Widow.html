@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <meta name="viewport" content ="width=device-width, initial-scale=1.0">
+        <title>Black Widow</title>
+        <link rel="stylesheet" href = "styleBlackWidow.css">
+    </head>
+    <body>
+        <div id= "hero">
+            <div class="navbar">
+                <img src="img/marvel-logo-34280.png" class ="logo">
+                <div class="user">
+                    <a href = "front.html">
+                        <input type="submit" value ="Back to Home">
+                    </a>
+                   
+                </div>
+            </div>
+            <div class="container">
+                <div class="info">
+                    <h1>Black Widow</h1>
+                    <p>A wealthy American business magnate, playboy, philanthropist, inventor and ingenious scientist, Anthony Edward "Tony" Stark suffers a severe chest injury during a kidnapping. When his captors attempt to force him to build a weapon of mass destruction, he instead creates a mechanized suit of armor to save his life and escape captivity. Later, Stark develops his suit, adding weapons and other technological devices he designed through his company, Stark Industries. He uses the suit and successive versions to protect the world as Iron Man. Although at first concealing his true identity, Stark eventually publicly reveals himself to be Iron Man.</p>
+                </div>
+            </div>
+
+            <div class ="slider">
+                <img src="img/left-arrow.png" id="prev">
+                <div class = "preview">
+                    <img src="img/blackwidow1.jpg" class="active thumbnail">
+                    <img src="img/blackwidow2.jpg" class="thumbnail">
+                    <img src="img/blackwidow3.jpg" class="thumbnail">
+                    <img src="img/blackwidow4.jpg" class="thumbnail">
+                    <img src="img/blackwidow5.jpg" class="thumbnail">
+
+                </div>
+                <img src="img/right-arrow.png" id="next">
+
+            </div>
+
+
+        </div>
+        <script>
+            var prev = document.getElementById("prev");
+            var next = document.getElementById("next");
+            var thumbnail = document.getElementsByClassName("thumbnail");
+            var hero = document.getElementById("hero");
+
+            var backgroundImage = new Array("img/blackwidow1.jpg","img/blackwidow2.jpg","img/blackwidow3.jpg","img/blackwidow4.jpg","img/blackwidow5.jpg");
+            let i=0;
+            next.onclick = function(){
+                if( i < 4)
+                {
+                hero.style.backgroundImage = 'url("'+backgroundImage[i+1]+'")';
+                thumbnail[i+1].classList.add("active");
+                thumbnail[i].classList.remove("active");
+                i++;
+                }
+            }
+
+            prev.onclick = function(){
+                if(i > 0)
+                {
+                hero.style.backgroundImage = 'url("'+backgroundImage[i-1]+'")';
+                thumbnail[i-1].classList.add("active");
+                thumbnail[i].classList.remove("active");
+                i--;
+                }
+            }
+        </script>
+
+    </body>
+</html>
